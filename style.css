@@ -1,0 +1,349 @@
+:root{
+  --black:#080808;
+  --graphite:#151515;
+  --graphite-2:#1b1b1b;
+  --gray:#8a8a8a;
+  --white:#fff;
+  --line:rgba(255,255,255,.10);
+  --max:1180px;
+  --radius:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,Arial,sans-serif;background:var(--black);color:var(--white);line-height:1.6}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+.header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(8,8,8,.84);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.3s}
+.header.scrolled{border-color:var(--line)}
+.nav{height:76px;display:flex;align-items:center;gap:34px}
+.logo{display:flex;align-items:baseline;gap:7px;position:relative;padding-bottom:14px;white-space:nowrap}
+.logo-vm{font-size:28px;font-weight:800;letter-spacing:-2px}
+.logo-transfer{font-size:18px;font-weight:300;letter-spacing:1px}
+.logo small{position:absolute;left:1px;bottom:0;font-size:6px;letter-spacing:.25px;color:#aaa}
+.menu{display:flex;align-items:center;gap:30px;margin-left:auto}
+.menu a{font-size:12px;color:#ddd;transition:.2s}
+.menu a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid transparent;padding:13px 20px;border-radius:3px;font-size:12px;font-weight:600;transition:.25s;cursor:pointer}
+.btn-light{background:#fff;color:#080808}
+.btn-light:hover{background:#ddd;transform:translateY(-1px)}
+.btn-outline{border-color:rgba(255,255,255,.55);background:transparent;color:#fff}
+.btn-outline:hover{background:#fff;color:#080808}
+.nav-whatsapp{font-size:11px;padding:10px 15px}
+.menu-toggle{display:none;background:none;border:0;width:38px;cursor:pointer}
+.menu-toggle span{display:block;height:2px;background:#fff;margin:6px 0}
+.hero{min-height:650px;position:relative;display:flex;align-items:center;overflow:hidden;padding-top:76px}
+.hero-bg,.interlagos-bg{position:absolute;inset:0;background-position:center;background-size:cover}
+.hero-bg{background-image:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 48%,rgba(0,0,0,.15) 100%),url("Corola.img.png")}
+.hero-content{position:relative;z-index:2}
+.hero-copy{max-width:570px;padding:80px 0}
+.eyebrow{font-size:10px;letter-spacing:2px;font-weight:600;color:#bbb;display:block;margin-bottom:13px}
+.hero h1{font-size:clamp(42px,5vw,70px);line-height:1.06;letter-spacing:-2.5px;margin-bottom:22px}
+.hero p{font-size:15px;color:#ddd;max-width:510px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-trust{position:absolute;bottom:0;left:0;width:100%;z-index:3;border-top:1px solid var(--line);background:rgba(8,8,8,.55);backdrop-filter:blur(8px)}
+.trust-row{display:flex;gap:0}
+.trust-row div{padding:18px 30px;border-right:1px solid var(--line);font-size:11px;color:#ddd}
+.trust-row div:first-child{padding-left:0}
+.trust-row b{font-size:16px;margin-right:10px;color:#fff}
+.section{padding:88px 0}
+.section-heading{margin-bottom:36px}
+.section-heading.compact{margin-bottom:28px}
+.section-heading h2{font-size:32px;letter-spacing:-1px;margin-bottom:7px}
+.section-heading p{color:#999;font-size:13px}
+.service-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.service-card{min-height:230px;border:1px solid var(--line);background:linear-gradient(145deg,#171717,#101010);padding:24px;display:flex;flex-direction:column;transition:.25s}
+.service-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3)}
+.service-icon{font-size:25px;margin-bottom:26px}
+.service-card h3{font-size:14px;margin-bottom:9px}
+.service-card p{font-size:11px;color:#999;line-height:1.55}
+.service-card a{font-size:10px;font-weight:600;margin-top:auto;padding-top:20px}
+.service-card a span,.text-link span{margin-left:7px}
+.interlagos{min-height:390px;position:relative;display:flex;align-items:center;overflow:hidden}
+.interlagos-bg{background-image:linear-gradient(90deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.65) 48%,rgba(0,0,0,.2) 100%),url("interlagos.png.jpg")}
+.interlagos-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
+.interlagos h2{font-size:40px;line-height:1.1;margin-bottom:10px}
+.interlagos p{font-size:15px}
+.interlagos .muted{font-size:12px;color:#aaa;max-width:480px;margin:13px 0 23px}
+.event-list{justify-self:end;min-width:260px}
+.event-list span{font-size:11px;color:#aaa;display:block;margin-bottom:10px}
+.event-list div{font-size:13px;margin:8px 0}
+.fleet{background:#0b0b0b}
+.fleet-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fleet-card{border:1px solid var(--line);background:#111;display:grid;grid-template-columns:1.1fr 1fr;min-height:310px;overflow:hidden}
+.fleet-image{background-size:cover;background-position:center;min-height:310px}
+.fleet-image.virtus{background-image:linear-gradient(0deg,rgba(0,0,0,.2),transparent),url("virtus.img.png")}
+.fleet-image.corolla{background-image:linear-gradient(0deg,rgba(0,0,0,.25),transparent),url("corola2.img.png")}
+.fleet-info{padding:28px;display:flex;flex-direction:column;justify-content:center}
+.fleet-label{font-size:9px;letter-spacing:1.7px;color:#999}
+.fleet-info h3{font-size:22px;margin:7px 0 7px}
+.specs{font-size:9px;color:#aaa}
+.specs i{font-style:normal;margin:0 6px}
+.fleet-info p{font-size:11px;color:#999;margin:17px 0}
+.text-link{font-size:10px;font-weight:600}
+.benefits{background:#0e0e0e}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.benefit-grid article{padding:30px 26px;border-right:1px solid var(--line)}
+.benefit-grid article:last-child{border-right:0}
+.benefit-icon{font-size:23px;display:block;margin-bottom:17px}
+.benefit-grid h3{font-size:13px;margin-bottom:7px}
+.benefit-grid p{font-size:10px;color:#999}
+.destination-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.destination-card{height:205px;position:relative;overflow:hidden;background-size:cover;background-position:center;display:flex;align-items:end}
+.destination-card::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 25%,rgba(0,0,0,.92))}
+.destination-card div{position:relative;padding:20px;width:100%}
+.destination-card h3{font-size:14px}
+.destination-card p{font-size:9px;color:#ccc}
+.sao-paulo{background-image:url("paulista.png")}
+.airports{background-image:url("aeroporto.png")}
+.litoral{background-image:url("litoral.png")}
+.interior{background-image:url("interior.png")}
+.inter{background-image:url("ayrton.png")}
+.how{background:#0b0b0b}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps article{display:flex;gap:18px;padding:30px;border-right:1px solid var(--line)}
+.steps article:last-child{border-right:0}
+.steps article>span{font-size:13px;border:1px solid #555;border-radius:50%;width:38px;height:38px;display:grid;place-items:center;flex:none}
+.steps h3{font-size:13px;margin-bottom:6px}
+.steps p{font-size:10px;color:#999}
+.about{display:grid;grid-template-columns:1fr 1fr;min-height:410px;background:#111}
+.about-image{background-image:linear-gradient(90deg,rgba(0,0,0,.15),rgba(0,0,0,.55)),url(carros2.img.jpeg);background-size:cover;background-position:center}
+.about-copy{padding:70px max(40px,calc((100vw - 1180px)/2)) 70px 65px;display:flex;flex-direction:column;justify-content:center}
+.about-copy h2{font-size:31px;line-height:1.15;margin-bottom:17px}
+.about-copy p{font-size:12px;color:#aaa;max-width:480px;margin-bottom:11px}
+.about-copy strong{font-size:12px;margin-top:13px}
+.contact-cta{padding:85px 0;background:linear-gradient(110deg,#0b0b0b,#171717)}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.contact-cta h2{font-size:43px;line-height:1.08;letter-spacing:-1.4px}
+.contact-cta p{color:#999;font-size:13px;margin-top:12px}
+.quote-form{background:#101010;border:1px solid var(--line);padding:28px}
+.quote-form h3{font-size:18px;margin-bottom:20px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.form-grid label{font-size:9px;color:#aaa}
+.form-grid input,.form-grid textarea{display:block;width:100%;margin-top:6px;border:1px solid #2b2b2b;background:#181818;color:#fff;padding:11px 12px;outline:none;border-radius:2px;font-size:11px}
+.form-grid input:focus,.form-grid textarea:focus{border-color:#777}
+.form-grid .full{grid-column:1/-1}
+.full-btn{width:100%;margin-top:15px}
+.quote-form small{display:block;color:#666;font-size:8px;margin-top:10px}
+.footer{background:#060606;border-top:1px solid var(--line);padding-top:55px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:45px}
+.footer-grid h4{font-size:11px;margin-bottom:13px}
+.footer-grid>a,.footer-grid div>a{display:block;font-size:10px;color:#888;margin:7px 0}
+.footer-copy{font-size:10px;color:#777;margin-top:15px}
+.footer-bottom{border-top:1px solid var(--line);display:flex;justify-content:space-between;padding:18px 0;color:#666;font-size:9px}
+@media(max-width:1000px){
+  .menu{gap:16px}.service-grid{grid-template-columns:repeat(3,1fr)}.destination-grid{grid-template-columns:repeat(3,1fr)}
+  .destination-card:last-child{grid-column:2}.fleet-card{grid-template-columns:1fr}.fleet-image{min-height:240px}.fleet-info{min-height:220px}
+}
+@media(max-width:760px){
+  .container{width:min(var(--max),calc(100% - 32px))}
+  .nav{height:68px}.menu-toggle{display:block;margin-left:auto;z-index:3}.nav-whatsapp{display:none}
+  .menu{display:none;position:absolute;top:68px;left:0;width:100%;background:#0b0b0b;border-bottom:1px solid var(--line);padding:18px 24px;flex-direction:column;align-items:flex-start;gap:18px}
+  .menu.open{display:flex}
+  .hero{min-height:690px}.hero-copy{padding:60px 0 130px}.hero h1{font-size:43px}.hero p{font-size:13px}
+  .trust-row{display:grid;grid-template-columns:1fr}.trust-row div,.trust-row div:first-child{padding:10px 0;border-right:0;border-bottom:1px solid var(--line);font-size:9px}
+  .trust-row div:last-child{border-bottom:0}
+  .section{padding:65px 0}.section-heading h2{font-size:27px}
+  .service-grid{grid-template-columns:1fr 1fr}.service-card{min-height:205px;padding:19px}
+  .interlagos{min-height:530px}.interlagos-content{grid-template-columns:1fr;gap:25px}.event-list{justify-self:start}
+  .fleet-grid,.cta-grid,.about{grid-template-columns:1fr}.fleet-card{grid-template-columns:1fr}.fleet-image{min-height:230px}
+  .benefit-grid{grid-template-columns:1fr 1fr}.benefit-grid article:nth-child(2){border-right:0}.benefit-grid article:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .destination-grid{grid-template-columns:1fr 1fr}.destination-card:last-child{grid-column:auto}
+  .steps{grid-template-columns:1fr}.steps article{border-right:0;border-bottom:1px solid var(--line)}.steps article:last-child{border-bottom:0}
+  .about-image{min-height:300px}.about-copy{padding:55px 24px}.about-copy h2{font-size:28px}
+  .contact-cta h2{font-size:34px}.quote-form{margin-top:20px}
+  .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.footer-bottom{gap:10px;flex-direction:column}
+}
+@media(max-width:480px){
+  .logo-vm{font-size:24px}.logo-transfer{font-size:16px}.hero h1{font-size:37px}.hero-actions .btn{width:100%}
+  .service-grid,.destination-grid,.benefit-grid{grid-template-columns:1fr}.benefit-grid article{border-right:0!important;border-bottom:1px solid var(--line)}.benefit-grid article:last-child{border-bottom:0}
+  .form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.footer-grid{grid-template-columns:1fr}
+}
+
+
+
+/* ===== NOVA IDENTIDADE VM TRANSFER: BRANCO + AMARELO ===== */
+:root{
+  --yellow:#F2C230;
+  --white:#FFFFFF;
+  --line:rgba(20,20,20,.12);
+}
+body{background:#fff;color:#171717}
+.header{background:rgba(8,8,8,.92)}
+.logo-transfer{color:#F2C230}
+.logo small{color:#d8d8d8}
+.menu a{color:#f1f1f1}
+.menu a:hover{color:#F2C230}
+.btn-light{background:#F2C230;color:#111;border-color:#F2C230}
+.btn-light:hover{background:#ffda63;border-color:#ffda63;color:#111}
+.btn-outline{border-color:rgba(255,255,255,.65);color:#fff}
+.btn-outline:hover{background:#fff;color:#111}
+.nav-whatsapp{border-color:#F2C230;color:#F2C230}
+.nav-whatsapp:hover{background:#F2C230;color:#111}
+.eyebrow{color:#D5A600}
+.hero .eyebrow,.interlagos .eyebrow{color:#F2C230}
+.hero h1 em,.interlagos h2 em{color:#F2C230;font-style:normal}
+.section{background:#fff;color:#171717}
+.section-heading h2{color:#171717}
+.section-heading p{color:#686868}
+.service-card{background:#fff;border-color:#e4e4e4;box-shadow:0 8px 26px rgba(0,0,0,.045)}
+.service-card:hover{border-color:#F2C230}
+.service-icon{color:#D5A600}
+.service-card h3,.service-card a,.text-link{color:#171717}
+.service-card p{color:#666}
+.service-card a:hover,.text-link:hover{color:#B58B00}
+.interlagos{color:#fff}
+.interlagos .eyebrow{color:#F2C230}
+.interlagos .btn-light{background:#F2C230;color:#111}
+.fleet{background:#f5f5f5;color:#171717}
+.fleet .section-heading h2,.fleet .fleet-info h3{color:#171717}
+.fleet-card{background:#fff;border-color:#e5e5e5;box-shadow:0 8px 25px rgba(0,0,0,.04)}
+.fleet-label{color:#8a6a00}
+.specs,.fleet-info p{color:#666}
+.benefits{background:#fff;color:#171717}
+.benefit-grid{border-color:#e5e5e5}
+.benefit-grid article{border-color:#e5e5e5}
+.benefit-icon{color:#C69A00}
+.benefit-grid h3{color:#171717}
+.benefit-grid p{color:#666}
+.destination-card{border-radius:3px}
+.destination-card::after{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:#F2C230}
+.destination-card h3{color:#fff}
+.destination-card p{color:#eee}
+.steps,.how-it-works{background:#f5f5f5;color:#171717}
+.about{background:#fff;color:#171717}
+.about p,.about .muted{color:#626262}
+.about .eyebrow{color:#B58B00}
+.cta,.quote,.quote-section{background:#151515;color:#fff}
+.cta .eyebrow,.quote .eyebrow,.quote-section .eyebrow{color:#F2C230}
+input,textarea,select{background:#fff;color:#171717;border:1px solid #d8d8d8}
+input:focus,textarea:focus,select:focus{outline:1px solid #D5A600;border-color:#D5A600}
+footer,.footer{background:#080808;color:#fff}
+footer a:hover,.footer a:hover{color:#F2C230}
+::selection{background:#F2C230;color:#111}
+@media(max-width:760px){
+  .service-card{background:#fff}
+  .fleet{background:#f5f5f5}
+}
+
+
+/* ===== AJUSTES FINAIS DE CORES DOS TEXTOS — VM TRANSFER ===== */
+
+/* Cabeçalho escuro: textos claros e amarelo nos destaques */
+.logo-vm { color: #FFFFFF; }
+.logo-transfer { color: #F2C230; }
+.menu a { color: #F1F1F1; }
+.menu a:hover { color: #F2C230; }
+
+/* Hero e seção Interlagos: texto branco sobre imagens escuras */
+.hero,
+.hero h1,
+.hero p,
+.hero-trust,
+.interlagos,
+.interlagos h2,
+.interlagos p,
+.event-list div { color: #FFFFFF; }
+
+.hero .eyebrow,
+.interlagos .eyebrow { color: #F2C230; }
+
+.trust-row div { color: #F1F1F1; }
+.trust-row b { color: #F2C230; }
+
+/* Seções claras: textos escuros e descrições em cinza legível */
+.section-heading h2,
+.service-card h3,
+.service-card a,
+.fleet-info h3,
+.benefit-grid h3,
+.steps h3,
+.about-copy h2 { color: #171717; }
+
+.section-heading p,
+.service-card p,
+.fleet-info p,
+.benefit-grid p,
+.steps p,
+.about-copy p,
+.specs { color: #5F5F5F; }
+
+/* Links e ícones em amarelo mais escuro para manter contraste */
+.service-icon,
+.benefit-icon { color: #B58B00; }
+.service-card a:hover,
+.text-link:hover { color: #8A6900; }
+
+/* Cartões e frota */
+.service-card { color: #171717; }
+.fleet-label { color: #806000; }
+.fleet-info .text-link { color: #171717; }
+.fleet-info .text-link:hover { color: #8A6900; }
+
+/* Seção de benefícios e etapas */
+.benefits,
+.how,
+.steps { color: #171717; }
+.steps article > span { color: #171717; border-color: #B8B8B8; }
+
+/* Chamada e formulário: fundo escuro com texto claro */
+.contact-cta { background: linear-gradient(110deg, #101010, #202020); color: #FFFFFF; }
+.contact-cta h2,
+.quote-form h3 { color: #FFFFFF; }
+.contact-cta p { color: #D0D0D0; }
+.quote-form { background: #FFFFFF; border-color: #E1E1E1; }
+.quote-form h3 { color: #171717; }
+.form-grid label { color: #444444; }
+.form-grid input,
+.form-grid textarea {
+  background: #FFFFFF;
+  color: #171717;
+  border-color: #D0D0D0;
+}
+.form-grid input::placeholder,
+.form-grid textarea::placeholder { color: #777777; }
+.form-grid input:focus,
+.form-grid textarea:focus {
+  border-color: #B58B00;
+  outline: 1px solid #B58B00;
+}
+.quote-form small { color: #666666; }
+
+/* Rodapé */
+.footer { color: #FFFFFF; }
+.footer-grid h4 { color: #FFFFFF; }
+.footer-grid > a,
+.footer-grid div > a { color: #C8C8C8; }
+.footer-copy,
+.footer-bottom { color: #B0B0B0; }
+.footer-grid > a:hover,
+.footer-grid div > a:hover { color: #F2C230; }
+
+/* Amarelo nos botões principais */
+.btn-light {
+  background: #F2C230;
+  color: #171717;
+  border-color: #F2C230;
+}
+.btn-light:hover {
+  background: #FFDA63;
+  border-color: #FFDA63;
+  color: #171717;
+}
+.btn-outline { color: #FFFFFF; }
+.btn-outline:hover { color: #171717; }
+
+/* Menu mobile */
+@media (max-width: 760px) {
+  .menu { background: #101010; }
+  .menu a { color: #FFFFFF; }
+}
+
+
+/* Novo veículo da frota: Chevrolet Spin */
+.fleet-image.spin {
+  background-image: linear-gradient(0deg, rgba(0,0,0,.25), transparent),
+    url("spim.img");
+  background-size: cover;
+  background-position: center;
+}
